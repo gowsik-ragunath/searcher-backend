@@ -1,0 +1,12 @@
+<div class="search-container">
+	<% foods.each do |food| %>
+		<div class="card">
+			<div class="title">
+				<%= food.name %>
+			</div>
+			<div class="description">
+				<%= food.description %>
+			</div>
+		</div>
+	<% end %>
+</div>

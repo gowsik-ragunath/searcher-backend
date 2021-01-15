@@ -1,0 +1,10 @@
+<div class="search">
+	<%= form_with url: foods_path, :method => "get", remote: true do |f| %>
+		<%= text_field_tag :q, "", class: "search-input" %>
+		<%= submit_tag :search, class: "button" %>
+	<% end %>
+</div>
+
+<div id="foods">
+	<%= render "index", foods: @foods %>
+</div>
