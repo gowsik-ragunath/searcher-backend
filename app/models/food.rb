@@ -1,4 +1,5 @@
 class Food < ApplicationRecord
+	include Rails.application.routes.url_helpers
 	include PgSearch::Model
 
 	has_rich_text :description
@@ -12,4 +13,7 @@ class Food < ApplicationRecord
                     	tsearch: { prefix: true, negation: true }
                   	}
 
+    def url
+    	api_v1_food_path(self)
+    end
 end
